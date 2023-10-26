@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Class Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <div id="sidebar">
+            <h2>Classes</h2>
+            <br>
+            <ul id="class-list">
+                <li class="class"><span>CITB302</span> Операционни системи</li>
+                <li class="class"><span>CITB308</span> Структури от данни</li>
+                <li class="class"><span>CITB558</span> Web-програмиране c HTML и JavaScript</li>
+                <li class="class"><span>CSCB324</span> Състезателно програмиране - I част</li>
+                <li class="class"><span>GENB002B</span> Статистика</li>
+                <li class="class"><span>GENB004B</span> Електроника</li>
+                <li class="class"><span>OOOK280</span> Киберсигурност на мрежите</li>
+            </ul>
+            <div id="clock">time-goes-here</div>
+        </div>
+        <div id="main">
+            <h1>Class Details</h1>
+            <div id="class-details">Select a class on the left to view its deadlines and dates.</div>
+        </div>
+    </div>
+    <div class="calendar-container">
+        <header class="calendar-header">
+                <span class="calendar-navigation" id="calendar-prev">⇦</span>
+                <p class="calendar-current-date"></p>
+                <span class="calendar-navigation" id="calendar-next">⇨</span>
+        </header>
+        <div class="calendar-body">
+            <ul class="calendar-weekdays">
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+                <li>Sun</li>
+            </ul>
+            <ul class="calendar-dates"></ul>
+        </div>
+    </div>
+    <script src="classes.js"></script>
+    <script src="calendar.js"></script>
+</body>
+</html>
