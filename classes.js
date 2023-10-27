@@ -62,8 +62,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const classList = document.getElementById("class-list");
     const classDetails = document.getElementById("class-details");
     let classDetailsHeader = document.querySelector('h1');
-    const classLink = document.getElementById('class-link');
     const classItems = classList.getElementsByClassName("class");
+    //const classLink = document.getElementById('class-link');
+    
     
     for (let i = 0; i < classItems.length; i++) {
         classItems[i].addEventListener("click", function() {
@@ -84,5 +85,4 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-    
 });
