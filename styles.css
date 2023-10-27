@@ -20,12 +20,13 @@ span{
     color: #fff;
     width: 35%;
     padding: 20px;
+    overflow: overlay;
 }
 #clock{
     display: flex;
     justify-content: space-around;
-    padding-top: 50px;
     font-size: 3vh;
+    padding: 35px 15px;
 }
 #main {
     width: 60%;
@@ -53,12 +54,14 @@ span{
 #class-list {
     list-style-type: none;
     padding: 0;
+    height: 67%;
 }
 
 #class-list li {
     margin-bottom: 25px;
     cursor: pointer;
     border-bottom: 2px solid rgb(48, 148, 255);
+    font-size: 20px;
 }
 
 #class-list li:hover {
@@ -69,18 +72,11 @@ span{
 #class-details {
     font-size: 18px;
 }
-#current-date{
-    margin-top: 30%;
-    font-weight: bold;
-    font-size: x-large;
-    display: flex;
-    justify-content: space-around;
-}
+
 #class-link{
     align-items: end;
     border-top: 2px solid rgb(4, 69, 138);
 }
-
 #calendar {
     width: 100%; 
     background-color: #fff; 
@@ -104,13 +100,12 @@ span{
     border-radius: 5px;
     margin: 5px;
 }
-
-
 .calendar-container {
     background: #fff;
     width: 100%;
-    height: 50vh;
+    height: 100%;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    min-width: 300px;
 }
 .calendar-container header {
     display: flex;
@@ -143,12 +138,10 @@ span{
     margin-top: 30px;
     position: relative;
     z-index: 1;
+}
+.calendar-dates li:hover{
     cursor: pointer;
 }
-.calendar-dates li.inactive {
-    color: #aaa;
-}
- 
 .calendar-dates li.active {
     color: #fff;
 }
@@ -163,18 +156,39 @@ span{
     border-radius: 50%;
     transform: translate(-50%, -50%);
 }
- 
+.calendar-header{
+    position: sticky;
+}
 .calendar-dates li.active::before {
     background: rgb(4, 69, 138);
 }
- 
-.calendar-dates li:not(.active):hover::before {
+.calendar-dates li:not(.active, .inactive):hover::before {
     background: #e4e1e1;
+    cursor:auto;
 }
-
 .calendar-current-date{
     margin: 10px;
 } 
 .calendar-navigation:hover{
     cursor: pointer;
+}
+.calendar-navigation{
+    background-color: transparent;
+    border: none;
+}
+
+.arrow-right, .arrow-left{
+  display: block;
+  margin: 30px auto;
+  width: 25px;
+  height: 25px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+}
+.arrow-right{
+ transform: rotate(135deg);
+}
+
+.arrow-left{
+ transform: rotate(-45deg);
 }
