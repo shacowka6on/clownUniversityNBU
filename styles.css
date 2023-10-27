@@ -22,6 +22,18 @@ span{
     padding: 20px;
     overflow: overlay;
 }
+#sidebar-header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+}
+#sidebar-header img{
+    width: 250px;
+    height: 150;
+}
 #clock{
     display: flex;
     justify-content: space-around;
@@ -35,6 +47,7 @@ span{
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+    overflow: auto;
 }
 #class-details a{
     color: white;
@@ -208,13 +221,16 @@ span{
         display: flex;
         width: 90%;
     }
-    
     #sidebar{
         width: 90%;
         align-items: center;
     }
-    #sidebar h2{
+    #sidebar-header{
         display: flex;
         justify-content: center;
+    }
+    #sidebar-header img{
+        width: 250px;
+        height: 150;
     }
 }
