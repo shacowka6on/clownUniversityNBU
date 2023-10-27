@@ -103,15 +103,15 @@ span{
 .calendar-container {
     background: #fff;
     width: 100%;
-    height: 100%;
+    height: 490px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
     min-width: 300px;
 }
 .calendar-container header {
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     padding: 25px 30px 10px;
-    justify-content: center;
     cursor: default;
 }
 .calendar-body ul {
@@ -122,6 +122,7 @@ span{
 }
 .calendar-body .calendar-dates {
     margin-bottom: 20px;
+    padding: 0px;
 }
  
 .calendar-body li {
@@ -156,9 +157,6 @@ span{
     border-radius: 50%;
     transform: translate(-50%, -50%);
 }
-.calendar-header{
-    position: sticky;
-}
 .calendar-dates li.active::before {
     background: rgb(4, 69, 138);
 }
@@ -191,4 +189,32 @@ span{
 
 .arrow-left{
  transform: rotate(-45deg);
+}
+
+@media screen and (width <= 600px) {
+    body{
+        display: block;
+        min-height: 100%;
+        overflow: visible;
+    }
+    #container{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+    #main{
+        display: flex;
+        width: 90%;
+    }
+    
+    #sidebar{
+        width: 90%;
+        align-items: center;
+    }
+    #sidebar h2{
+        display: flex;
+        justify-content: center;
+    }
 }
