@@ -249,7 +249,7 @@ span{
 @media screen and (width <= 600px) {
     body{
         display: block;
-        min-height: 100%;
+        width: 600px;
         overflow: visible;
     }
     #container{
