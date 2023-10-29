@@ -1,4 +1,4 @@
-const classData = {
+let classData = {
     "CITB302": {
         name: "Операционни системи",
         description: "https://e-edu.nbu.bg/course/view.php?id=21034",
@@ -67,32 +67,69 @@ const classData = {
         ]
     }
 };
+//window.classData = classData;
 
+const classDetailsHeader = document.querySelector('h1');
+const classDetails = document.getElementById("class-details");
 document.addEventListener("DOMContentLoaded", function() {
+    let classDataRetrieve = JSON.parse(localStorage.getItem("classDataRetrieve")) || {};
+    
     const classList = document.getElementById("class-list");
-    const classDetails = document.getElementById("class-details");
-    let classDetailsHeader = document.querySelector('h1');
+    // Merge the new data from classDataRetrieve into the existing classData
+    for (const classCode in classDataRetrieve) {
+        if (classDataRetrieve.hasOwnProperty(classCode)) {
+            classData[classCode] = classDataRetrieve[classCode];
+            
+            const liElement = document.createElement("li");
+            liElement.className = "class";
+            liElement.innerHTML = `<span>${classCode}</span> ${classData[classCode].name}`;
+            
+            classList.appendChild(liElement);
+        }
+    }
+    
+    //console.log(classData);
+
+    //--------------
+    // Deletes classes
+    //if(classDataRetrieve.hasOwnProperty('CITB123')){
+    //    delete classDataRetrieve["CITB123"]
+    //    localStorage.removeItem('classDataRetrieve', JSON.stringify(classDataRetrieve))
+    //}
+    //----------------
+
     const classItems = classList.getElementsByClassName("class");
     //const classLink = document.getElementById('class-link');
-    
-    
     for (let i = 0; i < classItems.length; i++) {
+        //Main page content
         classItems[i].addEventListener("click", function() {
             const selectedClass = this.textContent;
             const currentClass = selectedClass.split(' ')[0];
-    
+            
             classDetailsHeader.textContent = selectedClass;
             const classInfo = classData[currentClass];
             if (classInfo) {
-                classDetails.innerHTML = `<a href='${classInfo.description}'>Moodle link: ${currentClass}</a>`;
-    
-                let deadlinesList = "<h2>Deadlines</h2><ul>";
+                if(classInfo.description.trim() != '' || classInfo.description != null){
+                    classDetails.innerHTML = `<a href='${classInfo.description}'>Moodle link: ${currentClass}</a>`;
+                }
+                
+                let deadlinesList = `<h2>Deadlines</h2><ul id="deadline-list">`;
                 classInfo.deadlines.forEach((deadline) => {
                     deadlinesList += `<li>${deadline.date}: ${deadline.task}</li>`;
                 });
+                if(classInfo.deadlines.length < 1){
+                    deadlinesList += `<li>There are no deadlines</li>`
+                    classDetails.innerHTML = `<a href='#'>Moodle link:</a>`;
+                }
                 deadlinesList += "</ul>";
                 classDetails.innerHTML += deadlinesList;
+                
             }
         });
     }
 });
+
+document.querySelector('#sidebar-header').addEventListener('click', function(e){
+    window.location.href='index.html';
+})
+
