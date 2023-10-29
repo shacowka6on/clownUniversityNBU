@@ -21,7 +21,7 @@ span{
     width: 100%;
     padding: 20px;
     overflow: overlay;
-    max-width: 450px;
+    max-width: 600px;
 }
 #sidebar-header{
     display: flex;
