@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg, rgb(97, 115, 219) 0%, rgb(52, 62, 212) 25%, rgb(13, 126, 218) 51%, #096ddf 100%);
+    -webkit-animation: AnimateBG 10s ease infinite;
+            animation: AnimateBG 10s ease infinite;
+  }
+  
+  @-webkit-keyframes AnimateBG {
+    0% {
+      background-position: 0% 80%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 80%;
+    }
+  }
+  
+  @keyframes AnimateBG {
+    0% {
+      background-position: 0% 80%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 80%;
+    }
+}
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 250px;
+}
+#class-info{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+}
+#class-info{
+    color: white;
+}
+form {
+    display: flex;
+    box-sizing: border-box;
+    width: 260px;
+    margin: auto 0;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    padding-bottom: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+form h1{
+    background-color: rgb(24, 95, 173);
+    color: rgb(223, 223, 223);
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 0 0 30px 0;
+    width: 100%;
+}
+form input {
+    margin: 15px 10px 10px 10px;
+    padding: 10px;
+    border: none;
+    background-color: aliceblue;
+    border-bottom: 2px solid rgb(33, 129, 219);
+}
+form button{
+    border: 0;
+    background-color: rgb(24, 173, 56);
+    width: 100px;
+    padding: 8px;
+    color: white;
+    border-radius: 2px;
+    margin-top: 40px;
+    cursor: pointer;
+}
