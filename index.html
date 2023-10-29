@@ -11,7 +11,7 @@
         <div id="sidebar">
             <div id="sidebar-header">
                 <h2>Classes</h2>
-                <img src="images/nbu-img.png" alt="nbu-image">
+                <img src="images/nbu-img.png" alt="nbu-img">
             </div>
             <br>
             <ul id="class-list">
@@ -22,11 +22,16 @@
                 <li class="class"><span>GENB002B</span> Статистика</li>
                 <li class="class"><span>GENB004B</span> Електроника</li>
                 <li class="class"><span>OOOK280</span> Киберсигурност на мрежите</li>
-                <div id="clock">time-goes-here</div>
+                <!-- <div id="clock">time-goes-here</div> -->
             </ul>
+            <div id="mainPageButtons">
+                <a href="addAndEditPage.html"><div id="add">Add</div></a>
+                <a href="addAndEditPage.html"><div id="edit">Edit</div></a>    
+            </div>
         </div>
         <div id="main">
             <h1>Class Details</h1>
+            <!-- <a href=""><div id="options">.....</div></a> -->
             <div id="class-details">Select a class on the left to view its deadlines and dates.</div>
         </div>
     </div>
@@ -49,7 +54,7 @@
             <ul class="calendar-dates"></ul>
         </div>
     </div>
-    <script src="classes.js"></script>
+    <script type="module" src="classes.js"></script>
     <script src="calendar.js"></script>
 </body>
 </html>
