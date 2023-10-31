@@ -67,13 +67,11 @@ let classData = {
         ]
     }
 };
-//window.classData = classData;
 
 const classDetailsHeader = document.querySelector('h1');
 const classDetails = document.getElementById("class-details");
 document.addEventListener("DOMContentLoaded", function() {
-    let classDataRetrieve = JSON.parse(localStorage.getItem("classDataRetrieve")) || {};
-    
+    let classDataRetrieve = JSON.parse(localStorage.getItem("classData")) || {};
     const classList = document.getElementById("class-list");
     // Merge the new data from classDataRetrieve into the existing classData
     for (const classCode in classDataRetrieve) {
@@ -87,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
             classList.appendChild(liElement);
         }
     }
-    
+    localStorage.setItem("classData",JSON.stringify(classData));
     //console.log(classData);
 
     //--------------
@@ -96,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //    delete classDataRetrieve["CITB123"]
     //    localStorage.removeItem('classDataRetrieve', JSON.stringify(classDataRetrieve))
     //}
+
     //----------------
 
     const classItems = classList.getElementsByClassName("class");
@@ -132,4 +131,3 @@ document.addEventListener("DOMContentLoaded", function() {
 document.querySelector('#sidebar-header').addEventListener('click', function(e){
     window.location.href='index.html';
 })
-
