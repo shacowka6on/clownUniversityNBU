@@ -10,19 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
         li.textContent = classCode
 
         const deleteBtn = document.createElement('a')
+        deleteBtn.class = 'delete-btn'
         deleteBtn.href = '#';
         deleteBtn.textContent = 'X'
         li.appendChild(deleteBtn)
 
         displayClasses.appendChild(li);
     }
-    const classElements = document.querySelectorAll('.class');
-    Array.from(classElements).forEach(x => {
-        x.addEventListener('click', () => {
-            console.log(`pressed ${x.textContent}`);
+        const classElements = document.querySelectorAll('.class');
+        Array.from(classElements).forEach(x => {
+            x.addEventListener('click', () => {
+                const formattedName = x.textContent.replace('X', '')
+                //console.log(`pressed ${formattedName}`);
+            })
         })
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+        Array.from(deleteButtons).forEach((btn) => {
+            btn.addEventListener('click', () => {
+            
+        });
     })
-    // for(let item in Object.values(classDataEdit['CITB558'].deadlines)){
-    //     console.log(item.date);
-    // });
 })
