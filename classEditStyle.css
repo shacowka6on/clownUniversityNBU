@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 1%;
+    background-image: linear-gradient(-45deg, rgba(255, 251, 0, 0.575) 0%, rgba(255, 251, 0, 0.709) 25%, rgb(249, 255, 63) 51%, #ffff00 100%);
+    -webkit-animation: AnimateBG 10s ease infinite;
+            animation: AnimateBG 10s ease infinite;
+  }
+  
+  @-webkit-keyframes AnimateBG {
+    0% {
+      background-position: 0% 80%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 80%;
+    }
+  }
+  
+  @keyframes AnimateBG {
+    0% {
+      background-position: 0% 80%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 80%;
+    }
+}
+html{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+}
+#available-classes li {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 5px; 
+}
+#available-classes li:nth-child(odd){
+  background-color: rgba(255, 225, 0, 0.6);
+}
+#available-classes li:nth-child(even){
+  background-color: rgb(250,275,70,0.6);
+}
+ul{
+  padding: 0;
+}
+.class {
+  display: flex;
+  align-items: center; 
+  cursor: pointer;
+}
+.class:hover{
+  color: rgb(33, 129, 219);
+}
+.class a {
+  text-decoration: none;
+  color: red;
+}
